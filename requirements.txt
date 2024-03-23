@@ -1,10 +1,7 @@
 diffusers==0.7.2
 transformers==4.24.0
-torch==1.10.0  # Adjust based on compatibility and needs
 scipy==1.7.3
 ftfy==6.1.1
 python-telegram-bot>=20.0a2
 python-dotenv>=0.20.0
 huggingface_hub==0.10.1
-Pillow>=8.0.0  # Adjust version as needed
-requests>=2.25.0  # Adjust version as needed
