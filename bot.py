@@ -1,6 +1,6 @@
 import torch
 from torch import autocast
-from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline
+from diffusers import DiffusionPipeline
 from PIL import Image
 
 import os
@@ -26,7 +26,7 @@ revision = "fp16" if LOW_VRAM_MODE else None
 torch_dtype = torch.float16 if LOW_VRAM_MODE else None
 
 # load the text2img pipeline
-pipe = StableDiffusionPipeline.from_pretrained(MODEL_DATA, revision=revision, torch_dtype=torch_dtype, use_auth_token=USE_AUTH_TOKEN)
+pipe = DiffusionPipeline.from_pretrained(MODEL_DATA, revision=revision, torch_dtype=torch_dtype, use_auth_token=USE_AUTH_TOKEN)
 pipe = pipe.to("cpu")
 
 # load the img2img pipeline
