@@ -1,6 +1,6 @@
 import torch
 from torch import autocast
-from diffusers import DiffusionPipeline
+from diffusers import StableDiffusionPipeline, StableDiffusionImg2ImgPipeline
 from PIL import Image
 
 import os
@@ -12,7 +12,7 @@ import random
 
 load_dotenv()
 TG_TOKEN = os.getenv('TG_TOKEN')
-MODEL_DATA = os.getenv('MODEL_DATA', 'WarriorMama777/OrangeMixs')
+MODEL_DATA = os.getenv('MODEL_DATA', 'hakurei/waifu-diffusion')
 LOW_VRAM_MODE = (os.getenv('LOW_VRAM', 'true').lower() == 'true')
 USE_AUTH_TOKEN = (os.getenv('USE_AUTH_TOKEN', 'true').lower() == 'true')
 SAFETY_CHECKER = (os.getenv('SAFETY_CHECKER', 'true').lower() == 'true')
@@ -23,10 +23,10 @@ STRENTH = float(os.getenv('STRENTH', '0.75'))
 GUIDANCE_SCALE = float(os.getenv('GUIDANCE_SCALE', '7.5'))
 
 revision = "fp16" if LOW_VRAM_MODE else None
-torch_dtype = torch.float16 if LOW_VRAM_MODE else None
+torch_dtype = torch.float32 if LOW_VRAM_MODE else None
 
 # load the text2img pipeline
-pipe = DiffusionPipeline.from_pretrained(MODEL_DATA, revision=revision, torch_dtype=torch_dtype, use_auth_token=USE_AUTH_TOKEN)
+pipe = StableDiffusionPipeline.from_pretrained(MODEL_DATA, revision=revision, torch_dtype=torch_dtype, use_auth_token=USE_AUTH_TOKEN)
 pipe = pipe.to("cpu")
 
 # load the img2img pipeline
