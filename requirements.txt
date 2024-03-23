@@ -1,3 +1,4 @@
+torch>=1.10.0  # Necessary for diffusers and any torch-based operations
 diffusers==0.7.2
 transformers==4.24.0
 scipy==1.7.3
@@ -5,3 +6,6 @@ ftfy==6.1.1
 python-telegram-bot>=20.0a2
 python-dotenv>=0.20.0
 huggingface_hub==0.10.1
+Pillow>=8.0.0  # For image processing with PIL
+numpy>=1.21.0  # Often used with scipy and torch, may be needed for array manipulations
+requests>=2.25.0  # If you're making web requests outside the libraries already listed
