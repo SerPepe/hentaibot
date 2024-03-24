@@ -1,9 +1,7 @@
-# StableDiffusionTelegram
-StableDiffusionTelegram is a telegram bot that allows to generate images using the [Stable Diffusion](https://github.com/CompVis/stable-diffusion) AI from a telegram bot, in a much more comfortable and simple way. This bot can generate images from a text input or from an image with caption. In addition, given any response from the bot, a new try or a variation of the attempt can be generated.
-
+# HentAI Bot (get it hentAI)
 
 ## Try it
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11HvpaEJudoY5-KYU3GBWYjAMWoe2a21u)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)]
 
 Try the bot with colab, create a token of [Hugging Face Hub](https://huggingface.co/docs/hub/security-tokens) and [Telegram](https://t.me/BotFather) and deploy the bot with colab.
 
